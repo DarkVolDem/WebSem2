@@ -180,5 +180,4 @@ switch (month){
         break;
     default:
         console.log("Такого месяца нет");
-
 }
