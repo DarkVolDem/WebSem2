@@ -1,5 +1,5 @@
 //Numero1
-
+/*
 const kmh = 36;
 const ms = 20;
 
@@ -181,3 +181,86 @@ switch (month){
     default:
         console.log("Такого месяца нет");
 }
+*/
+
+
+// Объекты
+
+//Numero 1
+
+console.log("Numero1 \n -----");
+
+function convertSpeed (value, direction) {
+    let res=0;
+    if (direction=='toMS'){
+        res=value/3.6;
+    }
+    else if (direction=='toKMH'){
+        res=value*3.6;
+    }
+    console.log(res);
+}
+
+convertSpeed(36, 'toMS');
+convertSpeed(36, 'toKMH');
+
+//Numero2
+
+console.log("Numero2 \n -----");
+
+function absValue(value){
+    let res;
+    if (value<0){
+        res = 0-value;
+    }
+    else{
+        res=value;
+    }
+    return res;
+}
+
+console.log(absValue(-2));
+console.log(absValue(100));
+console.log(absValue(0));
+
+//Numero3
+
+console.log("Numero3 \n -----");
+
+let student ={
+    group: prompt("Введите группу"),
+    lastname: prompt("Введите фамилию"),
+    firstname: prompt("Введите имя")
+}
+
+console.log("Список свойств: group, last_name, first_name");
+console.log("Студент " + student.lastname + " " + student.firstname + " учится в " + student.group + " группе");
+
+//Numero4
+
+console.log("Numero4 \n -----");
+
+function randomNumber(minval, maxval){
+    let res;
+    res=Math.random()*(maxval-minval+1)+minval;
+    res=Math.floor(res);
+    return res;
+}
+
+console.log(randomNumber(0,10));
+console.log(randomNumber(-10,10));
+
+//Numero5
+
+console.log("Numero5 \n -----");
+
+function sampleArray (arr, col){
+    let resarr=[];
+    for (i=0;i<col;i++){
+        resarr[i]=arr.at(randomNumber(0,(arr.length-1)));
+    }
+    return resarr;
+}
+
+console.log(sampleArray([1,2,3,4], 2));
+console.log(sampleArray([1,2,3,4], 3));
