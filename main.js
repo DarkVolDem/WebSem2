@@ -188,7 +188,7 @@ switch (month){
 
 //Numero 1
 
-console.log("Numero1 \n -----");
+/*console.log("Numero1 \n -----");
 
 function convertSpeed (value, direction) {
     let res=0;
@@ -264,3 +264,6 @@ function sampleArray (arr, col){
 
 console.log(sampleArray([1,2,3,4], 2));
 console.log(sampleArray([1,2,3,4], 3));
+*/
+
+//
