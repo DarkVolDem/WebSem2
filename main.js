@@ -274,12 +274,13 @@ var submitbtn = document.getElementById("submitbtn");
 var passbtn = document.getElementById("passbtn");
 var password = document.getElementById("password");
 var email = document.getElementById("email");
+var regfieldset = document.getElementById("regfieldset");
 
 var flag = false;
 
 window.onclick = function(event){
     if ((event.target != regmodal) & (event.target != regbtn) & 
-    (event.target != submitbtn) & (event.target != passbtn) & (event.target != password) & (event.target != email))
+    (event.target != submitbtn) & (event.target != passbtn) & (event.target != password) & (event.target != email) & (event.target != regfieldset))
     {
         regmodal.style.display = "none";
     }
