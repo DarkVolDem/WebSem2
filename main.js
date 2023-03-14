@@ -266,4 +266,67 @@ console.log(sampleArray([1,2,3,4], 2));
 console.log(sampleArray([1,2,3,4], 3));
 */
 
-//
+//Laba3
+
+var regmodal = document.getElementById("regmodal");
+var regbtn = document.getElementById("regbtn");
+var submitbtn = document.getElementById("submitbtn");
+var passbtn = document.getElementById("passbtn");
+var password = document.getElementById("password");
+var email = document.getElementById("email");
+
+var flag = false;
+
+window.onclick = function(event){
+    if ((event.target != regmodal) & (event.target != regbtn) & 
+    (event.target != submitbtn) & (event.target != passbtn) & (event.target != password) & (event.target != email))
+    {
+        regmodal.style.display = "none";
+    }
+}
+
+
+regbtn.onclick = function () {
+    regmodal.style.display = "block";
+}
+
+submitbtn.onclick = function(event){
+    event.preventDefault();
+    let formData = new FormData();
+
+    formData.append('email', email.value);
+    formData.append('password', password.value);
+
+    for(let [name, value] of formData) {
+        console.log(`${name} = ${value}`);
+      }
+}
+
+passbtn.addEventListener("pointerdown", ()=>{
+    password.type="text";
+})
+
+passbtn.addEventListener("pointerup", ()=>{
+    password.type="password";
+})
+
+
+email.onblur = function(){
+    if(!this.value.includes('@')){
+        this.setCustomValidity("Адрес должен содержать @. Пример: example@example.com");
+    }
+    else{
+        this.setCustomValidity("");
+    }
+}
+
+password.onblur = function(){
+    if(!this.value.length<6){
+        this.setCustomValidity("Пароль слишком простой. Пароль должен содержать не меньше 6 символов");
+    }
+    else{
+        this.setCustomValidity("");
+    }
+}
+
+

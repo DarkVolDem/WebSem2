@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1>Губанов Владимир Алексеевич - Лабораторная работа 3</h1>
-    <script src="main.js"></script>
-</body>
+  </head>
+  <body>
+    <header>
+      <h1>Губанов Владимир Алексеевич - Лабораторная работа 3</h1>
+      <button id="regbtn" >Log In</button>
+      <div id="regmodal" hidden>
+        <fieldset >
+            <legend>Log In</legend>
+            <form action="">
+                <label for=""><input type="email" placeholder="Email adsress:" required id="email"></label>
+                <label for=""><input type="password" placeholder="Password" minlength="6" required id="password"></label>
+                <button type="button" id="passbtn">Показать пароль</button>
+                <button type="submit" id="submitbtn">Отправить форму</button>
+            </form> 
+        </fieldset>
+      </div>
+      <script src="main.js"></script>
+    </header>
+  </body>
 </html>
