@@ -268,15 +268,14 @@ console.log(sampleArray([1,2,3,4], 3));
 
 //Laba3
 
-var regmodal = document.getElementById("regmodal");
-var regbtn = document.getElementById("regbtn");
-var submitbtn = document.getElementById("submitbtn");
-var passbtn = document.getElementById("passbtn");
-var password = document.getElementById("password");
-var email = document.getElementById("email");
-var regform = document.getElementById("regform");
+const regmodal = document.getElementById("regmodal");
+const regbtn = document.getElementById("regbtn");
+const submitbtn = document.getElementById("submitbtn");
+const passbtn = document.getElementById("passbtn");
+const password = document.getElementById("password");
+const email = document.getElementById("email");
+const regform = document.getElementById("regform");
 
-var flag = false;
 
 window.onclick = function(event){
     if ((event.target != regmodal) & (event.target != regbtn) & 
@@ -291,9 +290,8 @@ regbtn.onclick = function () {
     regmodal.style.display = "block";
 }
 
-submitbtn.onclick = function(event){
-
-    //event.preventDefault();
+regform.onsubmit = function(event){
+    event.preventDefault();
 
 
     let formData = new FormData();
@@ -319,21 +317,21 @@ passbtn.addEventListener("pointerup", ()=>{
 email.onblur = function(){
     if(!this.value.includes('@')){
         this.setCustomValidity("Адрес должен содержать @. Пример: example@example.com");
-           regform.reportValidity();
     }
     else{
-        this.setCustomValidity(" ");
+        this.setCustomValidity("");
     }
 }
 
-password.onblur = function(){
-    if(this.value.length<6){
+password.onblur = function(event){
+    //const validity = this.validity;
+
+    //console.log(validity);
+    
+    if(this.value.trim().length < 6){
         this.setCustomValidity("Пароль слишком простой. Пароль должен содержать не меньше 6 символов");
-        regform.reportValidity();
     }
     else{
-        this.setCustomValidity(" ");
+        this.setCustomValidity("");
     }
 }
-
-
