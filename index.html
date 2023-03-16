@@ -10,16 +10,16 @@
     <header>
       <h1>Губанов Владимир Алексеевич - Лабораторная работа 3</h1>
       <button id="regbtn" >Log In</button>
-      <div id="regmodal" hidden>
-        <fieldset>
-            <legend>Log In</legend>
+      <div id="regmodal" hidden >
             <form action="" id="regform">
-                <label for=""><input id="email" type="email" placeholder="Email address" required></label>
-                <label for=""><input id="password" type="password" placeholder="Password" minlength="6" required></label>
+              <fieldset id="field">
+                <legend>Log In</legend>
+                <label for="email"><input id="email" type="email" placeholder="Email address" required></label> <p id="emval"> </p>
+                <label for="password"><input id="password" type="password" placeholder="Password" minlength="6" required></label> <p id="pasval"> </p>
                 <button type="button" id="passbtn">Показать пароль</button>
                 <button type="submit" id="submitbtn">Отправить форму</button>
+              </fieldset>
             </form> 
-        </fieldset>
       </div>
       <script src="main.js"></script>
     </header>

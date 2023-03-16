@@ -275,11 +275,16 @@ const passbtn = document.getElementById("passbtn");
 const password = document.getElementById("password");
 const email = document.getElementById("email");
 const regform = document.getElementById("regform");
+const pasval = document.getElementById("pasval");
+const emval = document.getElementById("emval");
+const field = document.getElementById("field");
 
 
-window.onclick = function(event){
-    if ((event.target != regmodal) & (event.target != regbtn) & 
-    (event.target != submitbtn) & (event.target != passbtn) & (event.target != password) & (event.target != email) & (event.target != regform))
+document.body.onclick = function(event){
+    if ((event.target != regmodal) && (event.target != regbtn) && 
+    (event.target != submitbtn) && (event.target != passbtn) && (event.target != password) 
+    && (event.target != email) && (event.target != regform) && (event.target != pasval) && (event.target != emval)
+    && (event.target != field))
     {
         regmodal.style.display = "none";
     }
@@ -317,23 +322,28 @@ passbtn.addEventListener("pointerup", ()=>{
 
 
 email.onblur = function(){
-    if(!this.value.includes('@')){
+    if(!this.validity.tuoeMismatch){
         this.setCustomValidity("Адрес должен содержать @. Пример: example@example.com");
+        emval.textContent="Адрес должен содержать @. Пример: example@example.com";
     }
     else{
         this.setCustomValidity("");
+        emval.textContent="";
     }
 }
 
-password.onblur = function(event){
-    //const validity = this.validity;
-
-    //console.log(validity);
+password.onblur = function(){
     
-    if(this.value.trim().length < 6){
+    if(this.validity.tooShort){
         this.setCustomValidity("Пароль слишком простой. Пароль должен содержать не меньше 6 символов");
+        pasval.textContent="Пароль слишком простой. Пароль должен содержать не меньше 6 символов";
     }
     else{
         this.setCustomValidity("");
+        pasval.textContent="";
     }
 }
+
+//validity.tooshort
+
+//текст, заменить проверку
