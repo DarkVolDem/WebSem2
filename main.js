@@ -320,7 +320,7 @@ passbtn.addEventListener("pointerup", ()=>{
 
 
 email.onblur = function(){
-    if(!this.validity.typeMismatch){
+    if(this.validity.typeMismatch){
         this.setCustomValidity("Адрес должен содержать @. Пример: example@example.com");
         emval.textContent="Адрес должен содержать @. Пример: example@example.com";
     }
