@@ -278,13 +278,11 @@ const regform = document.getElementById("regform");
 const pasval = document.getElementById("pasval");
 const emval = document.getElementById("emval");
 const field = document.getElementById("field");
+const bodydiv = document.getElementById("bodydiv");
 
 
 document.body.onclick = function(event){
-    if ((event.target != regmodal) && (event.target != regbtn) && 
-    (event.target != submitbtn) && (event.target != passbtn) && (event.target != password) 
-    && (event.target != email) && (event.target != regform) && (event.target != pasval) && (event.target != emval)
-    && (event.target != field))
+    if (event.target == bodydiv)
     {
         regmodal.style.display = "none";
     }
