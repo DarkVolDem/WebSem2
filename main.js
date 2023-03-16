@@ -302,6 +302,8 @@ regform.onsubmit = function(event){
     for(let [name, value] of formData) {
         console.log(`${name} = ${value}`);
     }
+
+    regmodal.style.display = "none";
     
 }
 
