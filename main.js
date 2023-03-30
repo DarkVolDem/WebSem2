@@ -290,7 +290,7 @@ document.body.onclick = function(event){
 
 
 regbtn.onclick = function () {
-    regmodal.style.display = "block";
+    regmodal.style.display = "block"; 
 }
 
 regform.onsubmit = function(event){
