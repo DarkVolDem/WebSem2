@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "awsm.css": "^3.0.7",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "mongodb": "^5.6.0",
+    "morgan": "^1.10.0"
   }
 }

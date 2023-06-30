@@ -1,9 +1,9 @@
 import { Router } from "express";
-import { addNewOrder, getOrdersSort } from "../routes/routes.js";
+import { addNewComment, getLastComments } from "../routes/routes.js";
 
 const router = Router();
 
-router.post("/orders", addNewOrder);
-router.get("/orders?:sort", getOrdersSort);
+router.post("/submit", addNewComment);
+router.get("", getLastComments);
 
 export default router;

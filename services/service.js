@@ -21,12 +21,10 @@ async function insertItem(collectionName, data) {
         }
 }
 
-async function getSortedItems(collectionName, Sortf) {
-   const sortObject = {};
-   sortObject[Sortf]=1;
+async function getSortedItems(collectionName) {
     const collection = db.collection(collectionName);
-   const orders = await collection.find().sort(sortObject)
-   return orders.toArray();
+    const comments = await collection.find().sort({_id: -1}).limit(3);
+    return comments.toArray();
     }
 
   export {
