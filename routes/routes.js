@@ -1,5 +1,4 @@
-import { getSortedItems, insertItem} from "../services/service.js";
-import { ObjectId } from "mongodb";
+const {getSortedItems, insertItem} = require('../services/service.js');
 
 async function addNewComment(req, res, next) {
 try {
@@ -17,4 +16,7 @@ async function getLastComments(req, res) {
 }
 
 
-export {addNewComment, getLastComments};
+module.exports = { 
+    addNewComment, 
+    getLastComments
+};

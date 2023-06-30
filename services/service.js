@@ -1,5 +1,5 @@
-import { ObjectId } from "mongodb";
-import { connectToMongoDB } from "../configs/config.js";
+
+const {connectToMongoDB} = require('../configs/config.js');
 
 let db;
 
@@ -27,7 +27,7 @@ async function getSortedItems(collectionName) {
     return comments.toArray();
     }
 
-  export {
+  module.exports = { 
     insertItem,
     getSortedItems,
-  }
+};

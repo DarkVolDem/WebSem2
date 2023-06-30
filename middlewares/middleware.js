@@ -23,4 +23,9 @@ async function ErrorsHandler(err, req, res, next) {
     next();
     }
     
-    export { ErrorsHandler, NotTrueUrl, HeadersHandler, LogRequest };
+    module.exports = { 
+        ErrorsHandler, 
+        NotTrueUrl, 
+        HeadersHandler, 
+        LogRequest 
+    };
