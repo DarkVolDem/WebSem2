@@ -1,14 +1,22 @@
-const express = require("express");
-const router = express.Router();
-const { parse } = require('querystring');
-let date = '', date_2 = "<table>";
-let count = 0;
-let params, json;
-router.use(express.static('public'));
-router.route('/').get((req,res) =>{
-    res.end("Hi")
-}).post((req,res) =>{
-    res.end(`400 Bad Request`)
+
+const http = require('http');
+const PORT = 3000;
+const hostname = "127.0.1.1";
+
+const server = http.createServer((req,res)=>{
+    console.log('Rabotaem', "HOST:",req.socket.address().address, "PORT:",req.socket.address().port);
+    if (req.url=='/' && req.method=='GET'){
+        res.end("Privet-privet");
+    }
+    else if (req.url=='/comments' && req.method=='POST'){
+
+    }
+    else if (req.url=='/stats' && req.method=='GET'){
+
+    }
+    else{
+        res.end("400 Bad request");
+    }
 })
 router.get('/stats', (req, res) => {
     
